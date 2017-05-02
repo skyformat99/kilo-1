@@ -6,10 +6,13 @@
 
 struct termios orig_termios;
 
-void disableRawMode() {
+void disableRawMode()
+{
 	tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
 }
-void enableRawMode() {
+
+void enableRawMode() 
+{
 	tcgetattr(STDIN_FILENO, &orig_termios);	
 	atexit(disableRawMode);
 
@@ -20,7 +23,8 @@ void enableRawMode() {
 }
 
 
-int main() {
+int main()
+{
 	enableRawMode();
 
 	char c;
