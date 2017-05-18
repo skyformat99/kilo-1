@@ -1,2 +1,2 @@
 # kilo
-a simple text editor
+a simple text editor. Not currently working
